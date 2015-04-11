@@ -23,7 +23,7 @@
     //初始化项目名称
     [self IniLabelName];
     //菊花
-    _activityIndicationView = [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(0, 0, 50, 50)];
+    _activityIndicationView = [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
     _activityIndicationView.center = CGPointMake([UIScreen mainScreen].bounds.size.width/2, [UIScreen mainScreen].bounds.size.height/2);
     [_activityIndicationView setActivityIndicatorViewStyle:UIActivityIndicatorViewStyleGray];
     [self.view addSubview:_activityIndicationView];
