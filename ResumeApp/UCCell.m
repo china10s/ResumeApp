@@ -25,13 +25,16 @@
     [_CtrlLabel setTranslatesAutoresizingMaskIntoConstraints: NO];
     [self addSubview:_CtrlLabel];
     
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[_CtrlLabel]|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(self,_CtrlLabel)]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[_CtrlLabel(>=100)]|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(self,_CtrlLabel)]];
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[_CtrlLabel(==15)]|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(self,_CtrlLabel)]];
     _CtrlLabel.textAlignment = NSTextAlignmentCenter;
     
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-[_CtrlImage(>=50)]-|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(self,_CtrlImage)]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[_CtrlImage(>=50)][_CtrlLabel]" options:0 metrics:nil views:NSDictionaryOfVariableBindings(_CtrlImage,_CtrlLabel)]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[_CtrlImage(>=100)]|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(self,_CtrlImage)]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[_CtrlImage(>=100)][_CtrlLabel]" options:0 metrics:nil views:NSDictionaryOfVariableBindings(_CtrlImage,_CtrlLabel)]];
     _CtrlImage.contentMode = UIViewContentModeCenter;
+    
+    //_CtrlLabel.backgroundColor = [UIColor blueColor];
+    //_CtrlImage.backgroundColor = [UIColor redColor];
     return self;
 }
 - (NSString *) reuseIdentifier {

@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "FMDB.h"
+
 @interface CGetData : NSObject
 @property (nonatomic,strong)NSString            *strSqlitePath;
 @property (nonatomic,strong)FMDatabase          *db;

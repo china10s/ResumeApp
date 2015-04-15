@@ -25,7 +25,6 @@
 		B665D6A31AD5BE0D00DC72D3 /* VCContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = B665D6A11AD5BE0D00DC72D3 /* VCContentView.m */; };
 		B665D6A41AD5BE0D00DC72D3 /* VCContentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B665D6A21AD5BE0D00DC72D3 /* VCContentView.xib */; };
 		B665D6A61AD5CCAE00DC72D3 /* liuqiangdong.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B665D6A51AD5CCAE00DC72D3 /* liuqiangdong.jpg */; };
-		B6C744181AD950540088CC15 /* UCElement.m in Sources */ = {isa = PBXBuildFile; fileRef = B6C744171AD950540088CC15 /* UCElement.m */; };
 		B6C7441C1AD951160088CC15 /* UCCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B6C7441A1AD951160088CC15 /* UCCell.m */; };
 		B6C744251AD96ABD0088CC15 /* cell_icon3.png in Resources */ = {isa = PBXBuildFile; fileRef = B6C744241AD96ABD0088CC15 /* cell_icon3.png */; };
 		B6C744271AD96B400088CC15 /* cell_icon1.png in Resources */ = {isa = PBXBuildFile; fileRef = B6C744261AD96B400088CC15 /* cell_icon1.png */; };
@@ -84,8 +83,6 @@
 		B665D6A11AD5BE0D00DC72D3 /* VCContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VCContentView.m; sourceTree = "<group>"; };
 		B665D6A21AD5BE0D00DC72D3 /* VCContentView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VCContentView.xib; sourceTree = "<group>"; };
 		B665D6A51AD5CCAE00DC72D3 /* liuqiangdong.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = liuqiangdong.jpg; sourceTree = "<group>"; };
-		B6C744161AD950540088CC15 /* UCElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UCElement.h; sourceTree = "<group>"; };
-		B6C744171AD950540088CC15 /* UCElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UCElement.m; sourceTree = "<group>"; };
 		B6C744191AD951160088CC15 /* UCCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UCCell.h; sourceTree = "<group>"; };
 		B6C7441A1AD951160088CC15 /* UCCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UCCell.m; sourceTree = "<group>"; };
 		B6C744241AD96ABD0088CC15 /* cell_icon3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cell_icon3.png; sourceTree = "<group>"; };
@@ -238,8 +235,6 @@
 				B665D6961AD5BDA700DC72D3 /* VCMenuView.h */,
 				B665D6971AD5BDA700DC72D3 /* VCMenuView.m */,
 				B665D6981AD5BDA700DC72D3 /* VCMenuView.xib */,
-				B6C744161AD950540088CC15 /* UCElement.h */,
-				B6C744171AD950540088CC15 /* UCElement.m */,
 				B6C744191AD951160088CC15 /* UCCell.h */,
 				B6C7441A1AD951160088CC15 /* UCCell.m */,
 			);
@@ -414,7 +409,6 @@
 				B665D69E1AD5BDD300DC72D3 /* VCMapView.m in Sources */,
 				B60CD29C1AD744D7005C24AC /* VTopLabel.m in Sources */,
 				B6C744401AD981A50088CC15 /* FMDatabase.m in Sources */,
-				B6C744181AD950540088CC15 /* UCElement.m in Sources */,
 				B6C744411AD981A50088CC15 /* FMDatabaseAdditions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -9,10 +9,6 @@
 #import "VCMenuView.h"
 #import "HPublic.h"
 
-#define BUTTONMARGIN 27
-#define BUTTONGAP 10
-#define BUTTONSIDE 100
-#define BUTTONTOP 250+LABELHEIGHT
 
 @interface VCMenuView ()
 
@@ -65,7 +61,7 @@
     _CtrlImageView.contentMode = UIViewContentModeScaleToFill;
     [self.view addSubview:_CtrlImageView];
     [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[_CtrlImageView]|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(self.view,_CtrlImageView)]];
-    NSString * strVImage = [NSString stringWithFormat:@"V:|-%d-[_CtrlImageView(==200)]",LABELHEIGHT];
+    NSString * strVImage = [NSString stringWithFormat:@"V:|-%d-[_CtrlImageView(==180)]",LABELHEIGHT];
     [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:strVImage options:0 metrics:nil views:NSDictionaryOfVariableBindings(self.view,_CtrlImageView)]];
     [_CtrlImageView setTranslatesAutoresizingMaskIntoConstraints:NO];
 }
@@ -74,12 +70,15 @@
 - (void)IniButtonCtrl{
     _ArrBtnName = [[NSMutableArray alloc] initWithObjects:@"轨迹",@"自我介绍",@"基本信息",@"职业规划",@"业余爱好", nil];
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
-    layout.itemSize = CGSizeMake(100,100);
+    //layout.itemSize = CGSizeMake(100,100);
     [layout setScrollDirection:UICollectionViewScrollDirectionVertical];
+    [layout setMinimumInteritemSpacing:10];
+    [layout setMinimumLineSpacing:10];
+    //[layout setEstimatedItemSize:CGSizeMake(100,120)];
     _CtrlElement = [[UICollectionView alloc] initWithFrame:CGRectMake(0,0, 350, 350) collectionViewLayout:layout];
     [self.view addSubview:_CtrlElement];
-    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[_CtrlImageView][_CtrlElement]|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(_CtrlImageView,_CtrlElement)]];
-    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[_CtrlElement]|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(self.view,_CtrlElement)]];
+    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[_CtrlImageView]-5-[_CtrlElement]-5-|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(_CtrlImageView,_CtrlElement)]];
+    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-20-[_CtrlElement]-20-|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(self.view,_CtrlElement)]];
     [_CtrlElement setTranslatesAutoresizingMaskIntoConstraints:NO];
     _CtrlElement.dataSource = self;
     _CtrlElement.delegate = self;
@@ -108,13 +107,17 @@
     NSString* strIcoName = [NSString stringWithFormat:@"cell_icon%ld.png",[indexPath row]+1];
     cell.CtrlImage.image = [UIImage imageNamed:strIcoName];
     cell.CtrlLabel.text = [_ArrBtnName objectAtIndex:[indexPath row]];
+    [cell setNeedsDisplay];
     return cell;
 }
 
 //选中某个按钮
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     [indexPath row];
-    UCCell *cell = [_CtrlElement cellForItemAtIndexPath:indexPath];
+    //UCCell *cell = [_CtrlElement cellForItemAtIndexPath:indexPath];
+    //CGRect rect1 = cell.frame;
+    //CGRect rect2 = self.view.frame;
+    //CGRect rect3 = [UIScreen mainScreen].bounds;
     NSInteger index = [indexPath row];
     switch (index) {
         case 0:
