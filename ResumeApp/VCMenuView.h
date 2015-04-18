@@ -21,5 +21,6 @@
 @property (nonatomic,strong)UICollectionView        *CtrlElement;
 @property (nonatomic,strong)NSMutableArray          *ArrBtnName;
 @property (nonatomic,strong)VCContentView           *CtrlContentView;
+@property (nonatomic,strong)UIScrollView            *CtrlScroll;
 - (void)BackClick:(id)sender;
 @end

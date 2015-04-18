@@ -33,8 +33,9 @@
     [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[_CtrlImage(>=100)][_CtrlLabel]" options:0 metrics:nil views:NSDictionaryOfVariableBindings(_CtrlImage,_CtrlLabel)]];
     _CtrlImage.contentMode = UIViewContentModeCenter;
     
-    //_CtrlLabel.backgroundColor = [UIColor blueColor];
-    //_CtrlImage.backgroundColor = [UIColor redColor];
+    //背景样式
+    self.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0];
+    [[self layer] setCornerRadius:5];
     return self;
 }
 - (NSString *) reuseIdentifier {

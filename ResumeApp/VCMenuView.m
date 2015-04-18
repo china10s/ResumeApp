@@ -22,7 +22,7 @@
     self.view.frame = [UIScreen mainScreen].bounds;
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    
+
     _iButtonCount = 0;
     //初始化顶部区域
     [self IniTopLabel];
@@ -47,6 +47,7 @@
 }
 */
 
+
 //初始化顶部区域
 - (void)IniTopLabel{
     _CtrlVTopLabel = [[VTopLabel alloc] initWithFrame:[UIScreen mainScreen].bounds];
@@ -54,6 +55,7 @@
     [_CtrlVTopLabel SetLabel:@"个人简介" isBackButtonShow:FALSE];
     _CtrlVTopLabel.DelBack = self;
 }
+
 
 //初始化上部图片
 - (void)IniImageCtrl{
@@ -66,15 +68,14 @@
     [_CtrlImageView setTranslatesAutoresizingMaskIntoConstraints:NO];
 }
 
+
 //初始化下部按钮区域
 - (void)IniButtonCtrl{
     _ArrBtnName = [[NSMutableArray alloc] initWithObjects:@"轨迹",@"自我介绍",@"基本信息",@"职业规划",@"业余爱好", nil];
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
-    //layout.itemSize = CGSizeMake(100,100);
     [layout setScrollDirection:UICollectionViewScrollDirectionVertical];
     [layout setMinimumInteritemSpacing:10];
     [layout setMinimumLineSpacing:10];
-    //[layout setEstimatedItemSize:CGSizeMake(100,120)];
     _CtrlElement = [[UICollectionView alloc] initWithFrame:CGRectMake(0,0, 350, 350) collectionViewLayout:layout];
     [self.view addSubview:_CtrlElement];
     [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[_CtrlImageView]-5-[_CtrlElement]-5-|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(_CtrlImageView,_CtrlElement)]];
@@ -86,6 +87,21 @@
     _CtrlElement.backgroundColor = [UIColor whiteColor];
 }
 
+- (BOOL)collectionView:(UICollectionView *)collectionView shouldHighlightItemAtIndexPath:(NSIndexPath *)indexPath{
+    return YES;
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didHighlightItemAtIndexPath:(NSIndexPath *)indexPath{
+    
+    UCCell *cell = [_CtrlElement cellForItemAtIndexPath:indexPath];
+    cell.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.1];
+}
+
+
+- (void)collectionView:(UICollectionView *)collectionView didUnhighlightItemAtIndexPath:(NSIndexPath *)indexPath{
+    UCCell *cell = [_CtrlElement cellForItemAtIndexPath:indexPath];
+    cell.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0];
+}
 
 //收到返回按钮消息
 - (void)BackClick:(id)sender{
@@ -114,10 +130,6 @@
 //选中某个按钮
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     [indexPath row];
-    //UCCell *cell = [_CtrlElement cellForItemAtIndexPath:indexPath];
-    //CGRect rect1 = cell.frame;
-    //CGRect rect2 = self.view.frame;
-    //CGRect rect3 = [UIScreen mainScreen].bounds;
     NSInteger index = [indexPath row];
     switch (index) {
         case 0:
@@ -143,6 +155,7 @@
             break;
     }
 }
+
 
 //显示地图框
 - (void)ShowMapView{
