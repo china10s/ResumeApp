@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 #import "VCMenuView.h"
-#import "UIScrollViewExt.h"
 
 @interface ViewController : UIViewController
 @property (nonatomic,strong)VCMenuView              *CtrlMenuView;

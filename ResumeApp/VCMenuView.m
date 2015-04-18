@@ -84,7 +84,7 @@
     _CtrlElement.dataSource = self;
     _CtrlElement.delegate = self;
     [_CtrlElement registerClass:[UCCell class] forCellWithReuseIdentifier:@"UCCell"];
-    _CtrlElement.backgroundColor = [UIColor whiteColor];
+    _CtrlElement.backgroundColor = [UIColor clearColor];
 }
 
 - (BOOL)collectionView:(UICollectionView *)collectionView shouldHighlightItemAtIndexPath:(NSIndexPath *)indexPath{

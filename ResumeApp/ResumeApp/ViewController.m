@@ -19,18 +19,20 @@
     // Do any additional setup after loading the view, typically from a nib.
     //下拉后的背景
     UIView * viewBack = [[UIView alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    viewBack.backgroundColor = [UIColor grayColor];
-    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 100, 20)];
+    viewBack.backgroundColor = [UIColor colorWithRed:169/255.0f green:169/255.0f blue:169/255.0f alpha:1];
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 100, 50)];
     [viewBack addSubview:label];
-    label.text = @"designed by china10s";
+    label.text = @"designed by china10s \n Edward zhu";
     label.textAlignment = NSTextAlignmentCenter;
+    label.font = [UIFont fontWithName:@"CourierNewPS-ItalicMT" size:20.0];
+    label.textColor = [UIColor colorWithRed:245/255.0f green:245/255.0f blue:245/255.0f alpha:1];
     [viewBack addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-[label]-|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(viewBack,label)]];
     [viewBack addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-20-[label]" options:0 metrics:nil views:NSDictionaryOfVariableBindings(viewBack,label)]];
-    
     [label setTranslatesAutoresizingMaskIntoConstraints:NO];
+    label.numberOfLines = 0;
     
     //可下拉
-    UIScrollView * viewScroll = [[UIScrollViewExt alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    UIScrollView * viewScroll = [[UIScrollView alloc] initWithFrame:[UIScreen mainScreen].bounds];
     CGSize size = [UIScreen mainScreen].bounds.size;
     size.height += 1;
     
